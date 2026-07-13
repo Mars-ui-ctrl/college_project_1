@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.DEV
+    ? 'http://localhost:5000/api'
+    : 'https://college-project-1-cinx.onrender.com/api',
   withCredentials: true, // Enables sending secure HTTP session cookies
   headers: {
     'Content-Type': 'application/json',
