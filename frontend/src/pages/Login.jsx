@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useModal } from '../contexts/ModalContext';
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
+  const { showAlert } = useModal();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,6 +16,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) return;
+
+    // Email format validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      await showAlert('Please enter a valid email address.', 'Invalid Email');
+      return;
+    }
 
     try {
       setError('');
