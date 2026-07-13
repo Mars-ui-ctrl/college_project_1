@@ -172,7 +172,7 @@ const DashboardLayout = () => {
       {/* --- MAIN PAGE VIEWPORT --- */}
       <div className="flex-1 flex flex-col pt-16 md:pt-0 overflow-hidden">
         {/* Top Header Bar */}
-        <header className="h-16 flex items-center justify-between px-6 border-b border-slate-800/30 z-10 shrink-0">
+        <header className="h-16 flex items-center justify-between px-6 border-b border-slate-800/30 z-30 shrink-0">
           {/* Project Switcher */}
           <div className="relative">
             <button
