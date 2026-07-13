@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Local Environment Configurations
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+frontend/.env
+
+# Production Build Directories
+dist/
+frontend/dist/
+build/
+
+# Server uploads and local database files
+backend/uploads/*
+!backend/uploads/.gitkeep
+logs/
+backend/logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
